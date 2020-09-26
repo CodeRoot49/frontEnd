@@ -1,0 +1,89 @@
+<div class="container  ml-auto mr-auto animated fadeIn">
+    <div class="container mt-3 ml-auto mr-auto animated fadeIn">
+        <div class="col-md-auto m-auto p-3">
+            <form (ngSubmit)="onsubmit(formUpdateEmpleado)" #formUpdateEmpleado="ngForm">
+                <table class="table table-hover table-dark mt-3">
+                    <thead>
+                        <tr>
+                            <th colspan="5">
+                                <h3 class="text-center">Actulizar empleado</h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <label for="nombre">Nombre: </label>
+                                <input class="form-control" #nameString minlength="3" (keyup)="CapitalizarNombre(nameString.value)" [(ngModel)]="update.nombres" value="{{nombre}}" name="nombres" type="text" required>
+                            </td>
+                            <td colspan="3">
+                                <label for="nombre">Apellido: </label>
+                                <input class="form-control" #lastNamesString minlength="3" (keyup)="CapitalizarApellido(lastNamesString.value)" value="{{apellido}}" [(ngModel)]="update.apellidos" name="apellidos" type="text" required>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <label for="tipoDocumento">Tipo de documento: </label>
+                                <h3>{{tipoDocumento}}</h3>
+                            </td>
+                            <td colspan="1">
+                                <label for="NrDocumento">Numero de Documento: </label>
+                                <input class="form-control" minlength="3" [(ngModel)]="update.NDocumento" value="{{documento}}" name="NDocumento" type="number" required>
+                            </td>
+                            <td colspan="2">
+                                <label for="fecha">Fecha de nacimiento: </label>
+                                <h5 id="fechas">{{Nacimiento}}</h5>
+                            </td>
+                            <td>
+                                <label for="rh">RH </label>
+                                <h5>{{rh}}</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">
+                                <label for="departamento">Departamento : </label>
+                                <input class="form-control" #DepartamentoString minlength="3" [(ngModel)]="update.departamento" value="{{departamento}}" name="departamento" type="text" required>
+                            </td>
+                            <td colspan="1">
+                                <label for="municipios">Municipios : </label>
+                                <input class="form-control" #MunicipioString minlength="3" [(ngModel)]="update.municipio" value="{{municipio}}" name="municipio" type="text" required>
+                            </td>
+
+                            <td colspan="3">
+                                <label for="address">Dirección : </label>
+                                <input class="form-control" minlength="3" value="{{direccion}}" [(ngModel)]="update.direccion" name="direccion" type="text" required>
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label for="email">Correo : </label>
+                                <input class="form-control" minlength="3" value="{{correo}}" [(ngModel)]="update.correo" name="correo" type="email" email required>
+                            </td>
+                            <td colspan="1">
+                                <label for="cargo">Cargo: </label>
+                                <input class="form-control" #CargoString minlength="3" value="{{cargo}}" [(ngModel)]="update.cargo" name="cargo" type="text" required>
+                            </td>
+
+                            <td colspan="2">
+                                <label for="telefono">Telefono o Celular: </label>
+                                <input class="form-control" minlength="3" value="{{telefono}}" [(ngModel)]="update.telefono" name="telefono" type="text" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a (click)="goBack()" type="reset"><button class="btn btn-danger m-1" type="button">Atrás</button></a>
+                            </td>
+                            <td colspan="3">
+                                <button class="btn float-right btn-primary btn-success-aproved ml-5" type="submit">Guardar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<app-loading [carga]="carga"></app-loading>

@@ -1,0 +1,77 @@
+<div *ngIf="mostrarTable" class="table-hidden-show">
+    <div (click)="close()" class="w-auto text-white x_hover cursorPointer ">
+        <span aria-hidden="true" class="fontsizeclose   ">&times;</span>
+    </div>
+    <table class="table table-hover-modal text-white table-dark text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of datasReports">
+                <td>{{data.id}}</td>
+                <td>{{data.fecha | date:'longDate'}}</td>
+                <td><i id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (click)="irReporte(data.fecha)" class=" cursorPointer fas fa-caret-right"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<<<<<<< HEAD
+<blockquote *ngIf="mostrarTable" class=" mr-2" style="position: absolute;
+        bottom: -14px;
+        width: 7%;
+        height: 40px;
+        color: white;
+        right: 0;
+        z-index: 100;
+        ">
+    <div (click)="donwload15(datasReports)" class="btn btn-success">Descargar</div>
+</blockquote>
+
+=======
+>>>>>>> ed0b9877d84bd4446a930154e9bc82453e875f15
+
+
+<div class="fade show bg-dark text-white">
+    <div class="modal-dialog bg-dark">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <div class="form-group  w-100 d-flex">
+                    <input type="date" #termino class="form-control w-50 mr-auto" aria-label="Dollar amount (with dot and two decimal places)">
+                    <input type="button" (click)="fechaSearch(termino.value)" class="btn btn-danger m-auto" value="buscar">
+                    <input type="button" (click)="todos()" class="btn btn-primary {{botonDissabled}} m-auto" value="todos">
+                </div>
+            </div>
+
+            <div class="modal-body modalReportes modal-contente-report">
+                <table class="table table-hover-modal text-white table-dark text-center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha inicio</th>
+                            <th>Fecha fin</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="menssageError">
+                            <td colspan="2">
+                                <div class="alert alert-danger" role="alert">
+                                    {{menssageError}}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr *ngFor="let data of datas">
+                            <td>{{data.id}}</td>
+                            <td>{{data.inicioS | date:'longDate'}}</td>
+                            <td>{{data.finS | date:'longDate' }}</td>
+                            <td><i data-toggle="modal" data-target="#exampleModal" (click)="irReportes(data.inicioS, data.finS)" class="cursorPointer fas fa-caret-right"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

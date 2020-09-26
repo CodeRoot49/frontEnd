@@ -1,0 +1,46 @@
+<div class="container mt-5 ml-auto mr-auto animated fadeIn">
+    <div class=" m-auto p-3">
+        <div class="card text-white bg-dark border-white mb-3" style="max-width: 1200px;">
+            <div class="row no-gutters">
+                <div class="col-md-4  imgFather" style="height: 428px;">
+
+                    <div *ngIf="cargandoLoading" style="width: 100%; line-height: auto;">
+                        <i class="fa fa-sync fa-5x fa-spin" style="margin-top: 46%; margin-left: 35%;"></i>
+                    </div>
+                    <img *ngIf="!cargandoLoading" [src]="empleado.foto" (click)="verImagen(empleado.foto, empleado.nombreCompleto,empleado.cargo)" class="card-img img-fluid cursorPointer h-100" alt="{{empleado.nombreCompleto}}">
+                    <div *ngIf="routesPrivate, false" class="cameraSer cursorPointer" (click)="changeImg(empleado.documento)">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <div *ngIf="routesPrivate" class="btn-group float-right">
+                            <button type="button" class="btn text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            <div class="dropdown-menu bg-dark">
+                                <a (click)="editar(empleado.documento, empleado.nombreCompleto)" class="verEmpleados w-auto  dropdown-item "><i class="fas edit-fa-empleado fa-edit"></i><span>Editar</span> </a>
+                                <a (click)="eliminar(empleado.documento)" class="verEmpleados w-auto  dropdown-item "><i class="fas trash-delete- fa-trash-alt"></i> <span>Eliminar</span> </a>
+                            </div>
+                        </div>
+                        <h1 class="card-title">{{empleado.nombreCompleto}}</h1>
+
+                        <p> <strong>Documento : </strong> <span>{{empleado.documento}}</span></p>
+                        <p> <strong>Cargo : </strong> <span>{{empleado.cargo}}</span></p>
+                        <p><strong>telefono : </strong>{{empleado.telefono}}</p>
+                        <p><strong>Correo : </strong>{{empleado.correo}}</p>
+                        <p><strong>fecha nacimiento : </strong>{{empleado.fechaNacimiento | date:'longDate'}}</p>
+                        <p><strong>Municipio : </strong>{{empleado.municipio}}</p>
+                        <p><strong>Dirección : </strong>{{empleado.direccion}}</p>
+                        <p><strong>RH : </strong>{{empleado.rh}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="carga" class="pantallaOpacity">
+    <object class="m-auto">
+        <embed style="width:100%;" class="girar"  src="../assets/img/icoHeader.svg">
+    </object>
+</div>

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg ">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="navbar-brand navbar-brand-logo ml-4 mr-5" routerLink="/">
+            <object>
+                <embed class="img-fluid img-custom-w" src="../../../assets/img/icoHeader.svg">
+            </object>
+        </a>
+        <ul class="navbar-nav  mr-auto">
+
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/">Administrador</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/empleados">Empleados</a>
+            </li>
+            <li *ngIf="!adminType" data-toggle="modal" data-target="#staticBackdrop" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/reportes">Reportes</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a *ngIf="!adminType" class="nav-link" routerLink="/reportes_quince">Reporte Quincenal</a>
+            </li>
+        </ul>
+        <div (click)=" closeSession() " class="nav-item dropdown   ml-auto ">
+            <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas  fa-user-cog fontAwesom ml-5"></i> Salir
+            </a>
+        </div>
+    </div>
+</nav>

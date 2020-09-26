@@ -1,0 +1,27 @@
+<div class="row mt-5  contenedor_formulario">
+    <div class="col-md-4 m-auto ">
+        <div class="card  mr-a card-color-login mt-5">
+            <div class="card-header text-center mt-2">
+                <h1 class="t_access_login">Cambiar contraseña</h1>
+                <hr>
+                <object class="m-auto">
+                    <embed class="img-fluid girar img-custom-w-login"  src="../assets/img/ico.svg">
+                </object>
+
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="changePass(formAdmin)" #formAdmin="ngForm">
+                    <div class="form-group">
+                        <input name='password' [(ngModel)]="adminPass.password" type="password" class="form-control" placeholder="Ingrese contraseña antigua" required>
+                    </div>
+                    <div class="form-group">
+                        <input name='Newpassword' [(ngModel)]="adminPass.newPassword" type="password" minlength="4" class="form-control" placeholder="Ingrese nueva contraseña" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-block btn-primary" value="Actualizar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

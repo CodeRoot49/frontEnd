@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div *ngIf="modalAsistencia" class="modal fade w-100" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content  w-100 bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title text-white" id="exampleModalLabel">{{asistencias.ndocumento}}</h5>
+                <h5 class=" font-weight-light  text-white ml-2 mt-1" id="exampleModalLabel">{{asistencias.nombres}}</h5>
+                <button type="button" class="close mr-3" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class=" text-center text-white" >&times;</span>
+          </button>
+            </div>
+            <div class="modal-body modal-contente-report">
+                <table class="table table-hover-modal text-white table-dark text-center">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Hora entrada</th>
+                            <th>Hora salida</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let asistencia of asistencias.reporteModel">
+
+                            <td>{{asistencia.fecha | date:'longDate'}}</td>
+                            <td>{{asistencia.horaEntrada}}</td>
+                            <td>{{asistencia.horaSalida || '--:--'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

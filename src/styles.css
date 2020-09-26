@@ -1,0 +1,502 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/* RESET */
+
+@media (max-width: 1045px) {
+    body {
+        display: none !important;
+    }
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+/*  */
+
+.form-control {
+    border: none;
+}
+
+.img-custom-w {
+    width: 100%;
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.img-custom-w-login {
+    width: 25%;
+}
+
+.girar {
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateX(deg) rotateY(0deg)
+    }
+    to {
+        transform: rotateX(0deg) rotateY(360deg)
+    }
+}
+
+.navbar-brand-logo {
+    width: 3.5%;
+}
+
+.card-color-login {
+    background-color: rgb(202, 199, 199);
+    box-shadow: 2px 2px 2px rgb(163, 163, 163);
+}
+
+.img-custom-w-j-5 {
+    width: 65%;
+    margin-left: 50px;
+}
+
+.btn-danger-color {
+    background-color: rgba(190, 31, 31, 0.8);
+}
+
+.display-4 {
+    overflow: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar {
+    height: 60px;
+    padding: 0.8em;
+    background-color: rgba(190, 31, 31, 0.8);
+    color: black;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: rgb(255, 153, 153);
+}
+
+.fontAwesom {
+    margin: 0 10px;
+    color: white;
+}
+
+.nav-link:hover .fontAwesom {
+    color: black;
+}
+
+.list-border-none .text-warning .card {
+    background-color: rgb(231, 231, 231);
+}
+
+.list-border-none:hover .fa-user-tie,
+.list-border-none:hover .fa-users,
+.list-border-none:hover .fa-book,
+.list-border-none:hover .fa-clipboard-list {
+    opacity: 0.6;
+    position: relative;
+    color: rgba(235, 20, 20, 0.8);
+    animation-name: move;
+    animation-duration: 500ms;
+    animation-direction: reverse;
+}
+
+.color-text-checkbox {
+    color: rgba(78, 78, 78, 0.5);
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+    to {
+        left: 5%;
+    }
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.list-border-none {
+    border: none;
+    list-style: none;
+}
+
+.lisit-ul-control {
+    margin-top: 10%;
+    margin-left: 13%;
+}
+
+.card-w {
+    width: 150%;
+    margin: 2% 0;
+}
+
+.list-border-none a {
+    text-decoration: none;
+}
+
+.navbar-brand {
+    margin-top: 4px;
+}
+
+.title-admin h4 {
+    color: white;
+}
+
+.list-quince {
+    list-style: none;
+}
+
+.btn-w-trans {
+    width: 20px;
+}
+
+.listaEmpleados,
+.listaReportes {
+    height: 422px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.listaReportes-quinales {
+    height: 408px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.lista-quincenal {
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.listaReportes-quinales::-webkit-scrollbar-track,
+.listaEmpleados::-webkit-scrollbar-track,
+.table-hidden-show::-webkit-scrollbar-track {
+    border-radius: 12px;
+}
+
+.listaReportes-quinales::-webkit-scrollbar,
+.lista-quincenal::-webkit-scrollbar,
+.modal-contente-report::-webkit-scrollbar,
+.listaEmpleados::-webkit-scrollbar,
+.table-reportes::-webkit-scrollbar,
+.table-hidden-show::-webkit-scrollbar {
+    width: 1px;
+}
+
+.listaReportes-quinales::-webkit-scrollbar,
+.lista-quincenalhover::-webkit-scrollbar,
+.listaEmpleados:hover::-webkit-scrollbar,
+.modal-contente-report:hover::-webkit-scrollbar,
+.table-reportes:hover::-webkit-scrollbar,
+.table-hidden-show:hover::-webkit-scrollbar {
+    width: 5px;
+}
+
+.listaReportes-quinales::-webkit-scrollbar-thumb,
+.lista-quincenal::-webkit-scrollbar-thumb,
+.listaEmpleados::-webkit-scrollbar-thumb,
+.modal-contente-report::-webkit-scrollbar-thumb,
+.table-reportes::-webkit-scrollbar-thumb,
+.table-hidden-show::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background-color: rgba(190, 31, 31, 0.8);
+}
+
+.verEmpleados {
+    text-decoration: none;
+    color: white !important;
+    margin: 0 5%;
+}
+
+.verEmpleados:hover {
+    color: rgba(235, 20, 20, 0.8) !important;
+}
+
+.fa-times {
+    color: white;
+}
+
+.dropdown-menu>div {
+    cursor: pointer;
+    color: white;
+}
+
+.verEmpleados-fa-eye,
+.trash-delete-,
+.edit-fa-empleado {
+    font-size: 140%;
+}
+
+.mr-11 {
+    margin-right: 11rem !important;
+}
+
+.dropdown-menu :nth-child(1):hover,
+.dropdown-menu :nth-child(2):hover,
+.dropdown-menu :nth-child(3):hover {
+    color: rgba(190, 31, 31, 0.8);
+}
+
+.card-huella-box {
+    background-color: rgb(231, 227, 227);
+    box-shadow: 2px 2px 2px 2px rgb(163, 163, 163);
+}
+
+
+/* ShowAll  */
+
+.animated {
+    animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+
+/* Validation addempleado */
+
+#msg {
+    z-index: 100;
+    width: 85%;
+    position: absolute;
+}
+
+.alert-danger {
+    z-index: 100;
+}
+
+.addEmpleadoCard {
+    margin: 2% auto 0 auto;
+}
+
+.showWindow {
+    top: 0;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+    background-color: rgba(68, 68, 68, 0.7);
+}
+
+.close {
+    float: left;
+    top: 0;
+    z-index: 80;
+    width: 5%;
+}
+
+.fa-chevron-left {
+    cursor: pointer;
+    color: white;
+}
+
+.hide {
+    display: none;
+}
+
+.fadeInRight {
+    animation-name: rightUp;
+    animation-duration: 3s;
+    position: relative;
+}
+
+@keyframes rightUp {
+    from {
+        right: -300;
+    }
+    to {
+        right: 0;
+    }
+}
+
+.table-hover-modal:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-contente-report {
+    height: 450px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.table-reportes {
+    width: 98%;
+    margin: auto;
+    height: 450px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.imgFather {
+    position: relative;
+}
+
+
+/* ultimo editado */
+
+.cameraSer {
+    bottom: 0.4em;
+    right: -5px;
+    text-align: center;
+    line-height: auto;
+    /*25px*/
+    text-justify: auto;
+    font-size: 150%;
+    border-radius: 80%;
+    position: absolute;
+    width: 12%;
+    height: 40px;
+    background-color: rgb(88, 88, 88);
+    opacity: 1;
+}
+
+.cameraSer:hover {
+    font-size: 170%;
+    height: 45px;
+    opacity: 1.5;
+}
+
+.styleChangePass {
+    position: absolute;
+    bottom: 8%;
+    width: auto;
+    right: 2px;
+    height: 35px;
+    color: white;
+    line-height: 16px;
+    z-index: 80;
+}
+
+.styleHoverPass {
+    position: absolute;
+    bottom: 3px;
+    width: auto;
+    right: 2px;
+    border: 1px solid rgb(119, 119, 119);
+    height: 35px;
+    color: white;
+    line-height: 16px;
+    opacity: 0.5;
+    z-index: 80;
+}
+
+.styleLeftReloj {
+    position: absolute;
+    bottom: 3px;
+    width: auto;
+    left: 2px;
+    border: 1px solid rgb(119, 119, 119);
+    height: 35px;
+    color: white;
+    line-height: 16px;
+    opacity: 0.5;
+    z-index: 80;
+}
+
+.styleHoverPass:hover {
+    opacity: 1;
+}
+
+.downup {
+    animation-name: downup;
+    animation-duration: 1s;
+}
+
+@keyframes downup {
+    0% {
+        bottom: -300px;
+    }
+}
+
+.pantallaOpacity {
+    position: absolute;
+    top: 0;
+    display: flex;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.closeButton {
+    height: 10%;
+    color: white;
+}
+
+.contenedor_miniMenu {
+    position: relative;
+}
+
+.miniMenu {
+    z-index: 80;
+    position: absolute;
+    float: initial;
+    justify-content: center;
+}
+
+.contenedor_formulario {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
+.modalReportes {
+    height: 389px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.table-hidden-show {
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    position: absolute;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fontsizeclose {
+    margin-left: 51%;
+    font-size: 2em;
+}
+
+.x_hover:hover>.fontsizeclose {
+    font-size: 2.5em;
+    overflow: hidden;
+    z-index: 100;
+}

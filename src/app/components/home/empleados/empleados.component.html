@@ -1,0 +1,75 @@
+<app-asistencia [asistencias]="asistencias" [modalAsistencia]="modalAsistencia"></app-asistencia>
+<div class="m-auto container  w-100">
+    <table class="table table   table-hover table-dark text-center">
+        <thead>
+
+            <tr>
+                <th colspan="7">
+                    <div class="form-group">
+                        <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" name="buscar" placeholder="Buscar Empleado (Documento, Nombre, Apellido, Cargo)">
+                    </div>
+                </th>
+
+            </tr>
+        </thead>
+    </table>
+    <div class="listaEmpleados">
+
+        <table class="table table  table-dark text-center">
+            <div class="m-auto   w-100">
+                <table class="table table   table-hover table-dark text-center">
+                    <thead>
+
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombre completo</th>
+                            <th>Cargo</th>
+                            <th>Número telefono</th>
+                            <th>Correo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="menssageError">
+                            <td colspan="6">
+                                <div class="alert alert-danger" role="alert">
+                                    {{menssageError}}
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr *ngFor='let empleado of empleados'>
+
+
+                            <td colspan="1"><strong>{{empleado.documento}}</strong></td>
+                            <td colspan="1">{{empleado.nombre_completo}}</td>
+                            <td colspan="1">{{empleado.cargo}}</td>
+                            <td colspan="1">{{empleado.telefono}}</td>
+                            <td colspan="1">{{empleado.correo}}</td>
+                            <td colspan="1">
+                                <div class="btn-group">
+                                    <button type="button" class="btn text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-ellipsis-v verEmpleados"></i>
+                                                </button>
+
+                                    <div class=" dropdown-menu bg-dark">
+                                        <div (click)="verEmpleado(empleado.documento,empleado.nombre_completo)" class="verEmpleados cursorPointer dropdown-item "><i class="far  fa-eye verEmpleados-fa-eye"></i> <span>Ver</span></div>
+                                        <!-- <button type="button">Launch demo modal</button> -->
+                                        <a *ngIf="!routesPrivate" data-toggle="modal" data-target="#exampleModal" (click)="asistencia(empleado.documento)" class="verEmpleados cursorPointer  dropdown-item "><i class="fas  edit-fa-empleado fa-edit"></i><span>Asistencia</span> </a>
+                                        <a *ngIf="routesPrivate" (click)="editar(empleado.documento, empleado.nombre_completo)" class="verEmpleados cursorPointer  dropdown-item "><i class="fas  edit-fa-empleado fa-edit"></i><span>Editar</span> </a>
+                                        <a *ngIf="routesPrivate" (click)="eliminar(empleado.documento, empleado.nombre_completo)" class="verEmpleados  cursorPointer  dropdown-item "><i class="fas  trash-delete- fa-trash-alt"></i> <span>Eliminar</span> </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </table>
+    </div>
+</div>
+<div *ngIf="carga" class="pantallaOpacity">
+    <object class="m-auto">
+        <embed style="width:100%;" class="girar"  src="../assets/img/icoHeader.svg">
+    </object>
+</div>

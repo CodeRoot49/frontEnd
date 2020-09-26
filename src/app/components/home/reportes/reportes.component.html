@@ -1,0 +1,39 @@
+<!-- Modal -->
+<div class="fade show bg-dark text-white">
+    <div class="modal-dialog bg-dark">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <div class="form-group  w-100 d-flex">
+                    <input type="date" #termino class="form-control w-50 mr-auto" aria-label="Dollar amount (with dot and two decimal places)">
+                    <input type="button" (click)="fechaSearch(termino.value)" class="btn btn-danger m-auto" value="buscar">
+                    <input type="button" (click)="todos()" class="btn btn-primary {{botonDissabled}} m-auto" value="todos">
+                </div>
+            </div>
+
+            <div class="modal-body modalReportes modal-contente-report">
+                <table class="table table-hover-modal text-white table-dark text-center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="menssageError">
+                            <td colspan="2">
+                                <div class="alert alert-danger" role="alert">
+                                    {{menssageError}}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr (click)="irReporte(data.fecha)" class=" cursorPointer" *ngFor="let data of datas">
+                            <td>{{data.id }}</td>
+                            <td>{{data.fecha | date:'longDate'}}</td>
+                            <td><i class="fas fa-caret-right"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

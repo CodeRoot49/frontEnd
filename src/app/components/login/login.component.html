@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div *ngIf="errorB" class="alert alert-danger text-center w-25 m-auto" role="alert">
+        {{error}}
+    </div>
+    <div class="row downup">
+        <div class="col-md-4 m-auto ">
+            <div class="card card-color-login mt-5">
+                <div class="card-header text-center mt-2">
+                    <h1 class="t_access_login">ACCESS INSPECTION</h1>
+                    <hr>
+                    <object class="m-auto">
+                    <embed class="img-fluid girar img-custom-w-login"  src="../assets/img/ico.svg">
+                </object>
+
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="postData(formAdmin)" #formAdmin="ngForm">
+                        <div class="form-group">
+                            <span *ngIf="formAdmin.submitted && formAdmin.controls['correo'].errors" class="text-danger animated fadeIn">*El correo es obligatorio</span>
+                            <input name='correo' type="email" email class="form-control" [(ngModel)]="login.correo" placeholder="Ingrese Usuario" required>
+
+                        </div>
+                        <div class="form-group">
+                            <span *ngIf="formAdmin.submitted && formAdmin.controls['password'].errors" class="text-danger animated fadeIn">* Debe ser mayor a 6 dijitos</span>
+                            <input name='password' type="password" minlength="4" [(ngModel)]="login.password" class="form-control" placeholder="Ingrese Contraseña" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-block btn-primary" value="Ingresar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="carga" class="pantallaOpacity">
+    <object class="m-auto">
+        <embed style="width:100%;" class="girar"  src="../assets/img/icoHeader.svg">
+    </object>
+</div>
+<app-footer></app-footer>

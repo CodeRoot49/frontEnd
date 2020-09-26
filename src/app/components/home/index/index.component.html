@@ -1,0 +1,63 @@
+<div *ngIf="adminType" class="mt-5 container ml-auto mr-auto animated fadeIn mb-5">
+    <div *ngIf="searchBoolean" class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Buscar empleado por cedula</span>
+        </div>
+        <input type="number" #termino Number class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+        <div class="input-group-append">
+            <span (click)="buscarempleado(termino.value)" class="input-group-text cursorPointer"><i class="fas fa-search"></i></span>
+            <span (click)="searchEmpleadoByDocument()" class="input-group-text cursorPointer"><i class="fas fa-times text-black-50"></i></span>
+        </div>
+    </div>
+    <div class="col m-auto d-flex  p-3">
+        <a (click)="empleados()" class="list-border-none text-white p-5   text-decoration-none  fontAwesom m-5">
+            <div class="card border-danger cursorPointer  card-w bg-dark text-center">
+                <i class="fas fa-users ml-auto  mr-auto mt-3 fa-5x"></i>
+                <div class="card-body">
+                    <h3>Lista de Empleados</h3>
+                </div>
+            </div>
+        </a>
+        <a (click)="searchEmpleadoByDocument()" class=" list-border-none m-5 p-5 float-right text-white text-decoration-none  fontAwesom m-3">
+            <div class="card card-w border-danger cursorPointer  text-center bg-dark">
+                <i class="fas fa-user-tie ml-auto  mr-auto mt-3 fa-5x"></i>
+                <div class="card-body">
+                    <h3>Buscar Empleado</h3>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+<!-- La otra vista del administrador  -->
+<div *ngIf="!adminType" class="container mt-5 ml-auto mr-auto animated fadeIn mb-5">
+    <div *ngIf="searchBoolean" class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Buscar reporte por fecha</span>
+        </div>
+        <input type="date" #termino class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+        <div class="input-group-append">
+            <span class="input-group-text cursorPointer" (click)="buscarFechaReporte(termino)"><i class="fas fa-search"></i></span>
+            <span class="input-group-text cursorPointer" (click)="searchEmpleadoByDocument()"><i class="fas fa-times text-black-50"></i></span>
+        </div>
+    </div>
+    <div class="col m-auto d-flex  p-3">
+        <a (click)="searchEmpleadoByDocument()" class="list-border-none cursorPointer text-white p-5  text-decoration-none  fontAwesom m-5">
+            <div class="card border-danger  card-w bg-dark text-center">
+                <i class="fas fa-clipboard-list  ml-auto mr-auto mt-3 fa-5x"></i>
+                <div class="card-body">
+                    <h3>Reporte diario</h3>
+                </div>
+            </div>
+        </a>
+        <a (click)="quince()" routerLinkActive="router-link-active" class="list-border-none cursorPointer m-5 p-5 float-right text-white text-decoration-none  fontAwesom m-3">
+            <div class="card card-w border-danger text-center bg-dark">
+                <i class="fas fa-book ml-auto mr-auto mt-3 fa-5x"></i>
+                <div class="card-body">
+                    <h3>Reporte quincenal</h3>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

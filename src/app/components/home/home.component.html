@@ -1,0 +1,13 @@
+<app-nav>
+</app-nav>
+
+<router-outlet></router-outlet>
+
+<div *ngIf="showPass" class="pantallaOpacity">
+    <div (click)="cerrarVentanas()" class="ml-4 closeButton mt-4 cursorPointer"><i class="fas fa-times fa-2x"></i></div>
+    <app-change-pass class="animated fadeIn " (cambio)="cambiar($event)"></app-change-pass>
+</div>
+<a *ngIf="changepass" (click)="changePass()" class="changePass btn btn-info  downup  nav-link cursorPointer styleChangePass text-center p-2 ml-2 animated " style="">Cambiar contraseña</a>
+<div (click)="nameMenu()" class="styleHoverPass    downup cursorPointer text-center p-2 ml-2"><i class="fas  fa-user-cog ml-1 mr-1 "> </i> {{nombreAdmin}} <i *ngIf="changepass" class="fas fa-angle-down ml-2"></i><i *ngIf="!changepass" class="fas fa-angle-up ml-2"></i></div>
+<div class="styleLeftReloj  downup  text-center p-2 ml-2">{{reloj}}</div>
+<app-footer></app-footer>

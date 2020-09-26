@@ -1,0 +1,32 @@
+<table #modeloExcel class="table table-index-up table-hover table-dark">
+    <thead>
+        <tr>
+            <th colspan="4" class="text-center">{{getReport.fecha | date:'longDate'}}</th>
+        </tr>
+    </thead>
+</table>
+<div class="table-reportes">
+    <table class="table  table-hover table-dark">
+
+        <thead>
+            <tr>
+                <th scope="col">Documento</th>
+                <th scope="col">Nombre completo</th>
+                <th scope="col">Entrada</th>
+                <th scope="col">Salida</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reporte of getReport.asistencias">
+                <th scope="row">{{reporte.documentos}}</th>
+                <td>{{reporte.nombres}}</td>
+                <td>{{reporte.entrada}}</td>
+                <td>{{reporte.salida}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="w-100 ">
+    <button (click)="goBack()" class="btn btn-danger ml-3">Back</button>
+    <button type="button" (click)="reportesExcel(getReport)" class="btn btn-success mr-3 mt-1 float-right"> <i class="fas fa-file-download"> - {{getReport.fecha | date:'longDate'}}</i></button>
+</div>
